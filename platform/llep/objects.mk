@@ -44,6 +44,7 @@ platform-objs-y += platform.o
 # Firmware load address configuration. This is mandatory.
 FW_TEXT_START=0x02000000
 PLATFORM_RISCV_XLEN=32
+PLATFORM_RISCV_ISA=rv32ima_zicsr_zifencei
 
 #
 # Jump firmware configuration.
