@@ -42,46 +42,19 @@ platform-objs-y += platform.o
 # platform-objs-y += <dt file name>.o
 
 # Firmware load address configuration. This is mandatory.
-FW_TEXT_START=0x80000000
-
-# Optional parameter for path to external FDT
-# FW_FDT_PATH="path to platform flattened device tree file"
-
-#
-# Dynamic firmware configuration.
-# Optional parameters are commented out. Uncomment and define these parameters
-# as needed.
-#
-FW_DYNAMIC=<y|n>
+FW_TEXT_START=0x00000000
+PLATFORM_RISCV_XLEN=32
 
 #
 # Jump firmware configuration.
 # Optional parameters are commented out. Uncomment and define these parameters
 # as needed.
 #
-FW_JUMP=<y|n>
-# This needs to be 4MB aligned for 32-bit support
-# This needs to be 2MB aligned for 64-bit support
-# ifeq ($(PLATFORM_RISCV_XLEN), 32)
-# FW_JUMP_ADDR=0x80400000
-# else
-# FW_JUMP_ADDR=0x80200000
-# endif
-# FW_JUMP_FDT_ADDR=0x82200000
-
-#
-# Firmware with payload configuration.
-# Optional parameters are commented out. Uncomment and define these parameters
-# as needed.
-#
-FW_PAYLOAD=<y|n>
+FW_JUMP=y
 # This needs to be 4MB aligned for 32-bit support
 # This needs to be 2MB aligned for 64-bit support
 ifeq ($(PLATFORM_RISCV_XLEN), 32)
-FW_PAYLOAD_OFFSET=0x400000
+	FW_JUMP_ADDR=0x80400000
 else
-FW_PAYLOAD_OFFSET=0x200000
+	FW_JUMP_ADDR=0x80200000
 endif
-# FW_PAYLOAD_ALIGN=0x1000
-# FW_PAYLOAD_PATH="path to next boot stage binary image file"
-# FW_PAYLOAD_FDT_ADDR=0x82200000
