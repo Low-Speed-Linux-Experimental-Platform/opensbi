@@ -42,7 +42,7 @@ platform-objs-y += platform.o
 # platform-objs-y += <dt file name>.o
 
 # Firmware load address configuration. This is mandatory.
-FW_TEXT_START=0x00000000
+FW_TEXT_START=0x02000000
 PLATFORM_RISCV_XLEN=32
 
 #
