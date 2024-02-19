@@ -54,3 +54,4 @@ PLATFORM_RISCV_ISA=rv32ima_zicsr_zifencei
 FW_JUMP=y
 # This needs to be 4MB aligned for 32-bit support
 FW_JUMP_ADDR=0x0204B000
+FW_JUMP_FDT_ADDR=0x02048800
