@@ -33,7 +33,7 @@ platform-ldflags-y =
 
 # Space separated list of object file names to be compiled for the platform
 platform-objs-y += platform.o
-
+FW_PIC=y
 #
 # If the platform support requires a builtin device tree file, the name of
 # the device tree compiled file should be specified here. The device tree
@@ -42,7 +42,7 @@ platform-objs-y += platform.o
 # platform-objs-y += <dt file name>.o
 
 # Firmware load address configuration. This is mandatory.
-FW_TEXT_START=0x02000000
+FW_TEXT_START=0x80dc0000
 PLATFORM_RISCV_XLEN=32
 PLATFORM_RISCV_ISA=rv32ima_zicsr_zifencei
 
@@ -53,5 +53,5 @@ PLATFORM_RISCV_ISA=rv32ima_zicsr_zifencei
 #
 FW_JUMP=y
 # This needs to be 4MB aligned for 32-bit support
-FW_JUMP_ADDR=0x0204B000
-FW_JUMP_FDT_ADDR=0x02048800
+FW_JUMP_ADDR=0x80000000
+FW_JUMP_FDT_ADDR=0x80dfd800
